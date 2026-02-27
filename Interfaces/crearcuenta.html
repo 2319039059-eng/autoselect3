@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta</title>
+  <link rel="stylesheet" href="../CSS/Login.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../IMG/logo (1).png" width="128" height="63" alt="AutoSelect">
+    </a>
+  </div>
+</header>
+
+<section id="formulario-login" class="login-section">
+  <div class="login-container">
+
+    <button class="btn-Cuenta">
+      <a href="Login.html" class="navbar-link">Iniciar Sesión</a>
+    </button>
+
+    <button class="btn-Crear">
+      <a href="crearcuenta.html" class="navbar-link">Crear Cuenta</a>
+    </button>
+
+    <!-- FORMULARIO-->
+    <form action="../PHP/registro.php" method="POST" class="login-form">
+
+      <div class="form-group">
+        <label>Nombre(s)</label>
+        <input type="text" name="Nombre_C" required>
+      </div>
+
+      <div class="form-group">
+        <label>Apellido Paterno</label>
+        <input type="text" name="A_paterno_C" required>
+      </div>
+
+      <div class="form-group">
+        <label>Apellido Materno</label>
+        <input type="text" name="A_materno_C" required>
+      </div>
+
+      <div class="form-group">
+        <label>Correo</label>
+        <input type="email" name="Correo_C" required>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" name="Contrasena_C" required>
+      </div>
+
+      <button type="submit" class="btn-login">Crear Cuenta</button>
+
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>

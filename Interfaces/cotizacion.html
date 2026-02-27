@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización - AutoSelect</title>
+  <link rel="stylesheet" href="../CSS/cotizacion.css">
+
+  <!-- CDN jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <header>AutoSelect - Cotización</header>
+
+  <section class="cotizacion" id="resultado">
+    <h2>COTIZACION</h2>
+    <div class="detalle" id="detalle">Cargando información...</div>
+    <div id="vehiculo"></div>
+    <button class="btn" onclick="generarPDF()">Generar cotización</button>
+
+    <!--  Mensaje  -->
+    <div id="mensaje-exito" class="mensaje-exito">La cotizacion se realizo con exito</div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const modelo = params.get('modelo');
+    const color = params.get('color');
+    const precio = params.get('precio');
+    const imagen = params.get('imagen');
+
+    // Mostrar información del vehículo seleccionado
+    if (modelo && color && precio && imagen) {
+      document.getElementById('vehiculo').innerHTML = `
+        <div class="tarjeta">
+          <img src="${imagen}" alt="${modelo}" style="width:300px; border-radius:10px;">
+          <h3>${modelo}</h3>
+          <p><strong>Color:</strong> ${color}</p>
+          <p><strong>Precio:</strong> $${parseInt(precio).toLocaleString()} MXN</p>
+        </div>
+      `;
+      document.getElementById('detalle').innerHTML = `<strong>Modelo seleccionado:</strong> ${modelo}`;
+    } else {
+      document.getElementById('detalle').innerText = 'No se ha seleccionado una camioneta.';
+    }
+
+    // === Función para generar PDF y mostrar mensaje de éxito ===
+    async function generarPDF() {
+      if (!modelo) {
+        alert("Por favor selecciona una camioneta antes de generar la cotización.");
+        return;
+      }
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(18);
+      doc.text("AutoSelect - Cotización de Vehículo", 20, 20);
+
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "normal");
+      doc.text(`Modelo: ${modelo}`, 20, 40);
+      doc.text(`Color: ${color}`, 20, 50);
+      doc.text(`Precio: $${parseInt(precio).toLocaleString()} MXN`, 20, 60);
+      doc.text("Gracias por cotizar con AutoSelect.", 20, 80);
+
+      // Guardar PDF
+      doc.save(`Cotizacion_${modelo}.pdf`);
+
+      // Mostrar mensaje 
+      const mensaje = document.getElementById('mensaje-exito');
+      mensaje.classList.add('mostrar');
+      setTimeout(() => {
+        mensaje.classList.remove('mostrar');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

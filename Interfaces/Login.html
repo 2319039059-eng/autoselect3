@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>AutoSelect - Consesionaria de automovil</title>
+  <meta name="title" content="AutoSelect">
+  <meta name="description" content="AutoSelect">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../IMG/Favicon.jpg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="../CSS/Login.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="../IMG/hero-banner.png">
+  <link rel="preload" as="image" href="../IMG/hero-bg.jpg">
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+    <div class="container">
+
+      <a href="../index.html" class="logo">
+        <img src="../IMG/logo (1).png" width="128" height="63" alt="autoSelect">
+      </a>
+
+      <nav class="navbar" color="black" data-navbar>
+        <ul class="navbar-list">
+
+          <li>
+            <a href="../index.html" class="navbar-link">Inicio</a>
+          </li>
+
+          <li>
+            <a href="../index.html" class="navbar-link">Salir</a>
+          </li>
+
+          <li>
+            <a href="./Catalogo.html" class="navbar-link">Catalogo</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Proyectos</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Contacto</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <span class="nav-toggle-icon icon-1"></span>
+        <span class="nav-toggle-icon icon-2"></span>
+        <span class="nav-toggle-icon icon-3"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <section id="formulario-login" class="login-section">
+    <div class="login-container">
+
+      <button class="btn-Cuenta">
+        <a href="Login.html" class="navbar-link">Registarte</a>
+      </button>
+
+      <button class="btn-Crear">
+        <a href="crearcuenta.html" class="navbar-link">Crear cuenta</a>
+      </button>
+
+      <!-- FORMULARIO  -->
+      <form action="../PHP/Login.php" method="POST" class="login-form">
+
+        <div class="form-group">
+          <label for="usuario">Usuario o Email</label>
+          <input type="text" id="usuario" name="usuario" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

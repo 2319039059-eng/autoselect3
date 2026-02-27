@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Carrusel.css">
+</head>
+<body>
+    <section class="sss">
+<div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Tarjeta 1 -->
+      <div class="swiper-slide">
+        <div class="card-image">
+          <img src="../img/toyota.jpg" alt="Designer">
+        </div>
+        <div class="card-content">
+          <span class="tag designer">TRD</span>
+          <h5>Lo mejor para una buena experiencia</h5>
+          <p>Cuando de herencia del off-road se trata, solo hay un nombre que necesitas conocer: Toyota Racing Development (TRD).</p>
+        </div>
+        <div class="arrow">
+          <a href="#">↗</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="swiper-slide">
+        <div class="card-image">
+           <img src="../img/t2.jpg">
+        </div>
+        <div class="card-content">
+          <span class="tag developer">TRD pro</span>
+          <h5>Suspensión estandar</h5>
+          <p>OCuando de herencia del off-road se trata, solo hay un nombre que necesitas conocer: Toyota Racing Development (TRD).</p>
+        </div>
+        <div class="arrow">
+          <a href="#">↗</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="swiper-slide">
+        <div class="card-image">
+          <img src="../img/toyota2.png" alt="Marketer">
+        </div>
+        <div class="card-content">
+          <span class="tag marketer">Tacoma TRD pro</span>
+          <h5>4x4</h5>
+          <p>Cuando de herencia del off-road se trata, solo hay un nombre que necesitas conocer: Toyota Racing Development (TRD).</p>
+        </div>
+        <div class="arrow">
+          <a href="#">↗</a>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card-image">
+          <img src="../img/t4.jpg" alt="Marketer">
+       </div>
+        <div class="card-content">
+          <span class="tag marketer">Tacoma TRD pro</span>
+          <h5>4x4</h5>
+          <p>Cuando de herencia del off-road se trata, solo hay un nombre que necesitas conocer: Toyota Racing Development (TRD).</p>
+        </div>
+        <div class="arrow">
+          <a href="#">↗</a>
+        </div>
+        
+
+    </div>
+
+
+  <!--movimiento dl carrusel -->
+ 
+  <script>
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal', // 🔹 Asegura que sea horizontal
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+</section>
+     
+
+</body>
+</html>

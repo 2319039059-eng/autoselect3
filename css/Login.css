@@ -1,0 +1,223 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Chakra Petch", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  position: fixed;         /* Siempre fijo arriba */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #1e2a3a; /* Fondo azul oscuro */
+  padding: 10px 40px;
+}
+
+/* Contenedor interno */
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+}
+
+/* NAVBAR */
+.navbar {
+  flex-grow: 1;
+  margin-left: 50px;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ff0000; /* Rojo al pasar el mouse */
+}
+
+/* BOTÓN INICIAR SESIÓN */
+.btn.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #c40000; /* Rojo */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.btn.btn-primary:hover {
+  background-color: #a00000;
+}
+
+/* Ícono flecha */
+.btn .material-symbols-rounded {
+  font-size: 20px;
+}
+
+/* Toggle menú (para móviles) */
+.nav-toggle-btn {
+  display: none; /* Oculto en escritorio */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-icon {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* FORMULARIO DE LOGIN */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px; /* deja espacio por el header fijo */
+  background: #f1f1f1;
+  min-height: 100vh;
+}
+
+.login-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative; /* agregado para posicionar el botón detrás */
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #1e2a3a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #c40000; /* Rojo */
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #c40000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #a00000;
+}
+
+/* BOTÓN DE CUENTA */
+.btn-Cuenta {
+  position: absolute;       
+  top: -20px;              
+  left: 20%;
+  transform: translateX(-70%);
+  z-index: 0;               /* detrás del formulario */
+  opacity: 0.3;             /* efecto de fondo */
+  width: 130px;           
+  padding: 10px;
+  background-color: #c40000;
+  color: #fff;
+  border: navy;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, opacity 0.1s;
+}
+
+.btn-Cuenta:hover {
+  opacity: 0.5;
+  background-color: #b00000;
+}
+/* BOTÓN DE CUENTA */
+.btn-Crear {
+  position: absolute;       /* para ponerlo detrás */
+  top: -20px;               /* ajusta según quieras */
+  left: 55%;
+  transform: translateX(-70%);
+  z-index: 0;               /* detrás del formulario */
+  opacity: 0.3;             /* efecto de fondo */
+  width: 130px;             /* tamaño opcional */
+  padding: 10px;
+  background-color: #c40000;
+  color: #fff;
+  border: navy;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, opacity 0.1s;
+}
+
+
+.btn-Crear:hover {
+  opacity: 0.5;
+  background-color: #b00000;
+}
+/* Para asegurarnos de que el formulario esté encima */
+.login-form {
+  position: relative;
+  z-index: 1;
+}
